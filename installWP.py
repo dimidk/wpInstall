@@ -23,7 +23,8 @@ curDir=os.getcwd()
 if (curDir==init.installDir):
 	print "you are in the correct directory"
 else:
-	exit
+	print "You are in wrong directory"
+	exit(0)
 	
 for x in range(5):
 	
