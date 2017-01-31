@@ -1,6 +1,8 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 
+"""mysql -Bse : -B batch work, not interactive -s silent mode -e execute command"""
+
 import passwd
 
 
