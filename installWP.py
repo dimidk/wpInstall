@@ -24,6 +24,7 @@ if (curDir==init.installDir):
 	print "you are in the correct directory"
 else:
 	exit
+	
 for x in range(5):
 	
 	subprocess.call(init.tarcmd.split(' '))
