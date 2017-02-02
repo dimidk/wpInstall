@@ -55,8 +55,8 @@ for x in range(5):
 	mysql_cmd=init.mysql_CMD
 	
 	mysql_cmd=mysql_cmd+str(x)+mysql_user+str(x)+mysql_userAppend+str(x)+mysql_grant+str(x)+mysql_grantAppend+str(x)+"'@'localhost'\""
-	mysqlcmd=mysql_cmd.split('"')
-	print mysqlcmd[1]
+	
+	print mysql_cmd.split('"')[1]
 	p=subprocess.Popen(mysql_cmd,stdout=subprocess.PIPE,shell=True)
 
 	
