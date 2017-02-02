@@ -18,6 +18,10 @@ chown_CMD="sudo chown www-data:www-data -R "+installDir
 chmod_CMD="sudo chmod 755 -R " +installDir
 mv_CMD="sudo mv "+installDir+"/wordpress "+installDir+"/wp"
 
+dropcmd="mysql --user={user} --password={password} -Bse \"""DROP DATABASE "+baseDir+ "wp"
+drop_CMD=dropcmd.format(**mysqlDict)
+drop_user="; DROP USER '"+baseDir+"wp"
+rm_CMD="sudo rm -r "+installDir+"/wp"
 
 
 
