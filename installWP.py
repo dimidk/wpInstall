@@ -7,10 +7,10 @@ from subprocess import Popen,PIPE
 import passwd
 import init
 
-mysql_user="; CREATE USER 'wp"
-mysql_userAppend="'@'localhost' identified by 'wp"
-mysql_grant="'; GRANT ALL PRIVILEGES ON wp"
-mysql_grantAppend=".* to 'wp"
+mysql_user="; CREATE USER '"+init.baseDir+"wp"
+mysql_userAppend="'@'localhost' identified by '"+init.baseDir+"wp"
+mysql_grant="'; GRANT ALL PRIVILEGES ON "+init.baseDir+"wp"
+mysql_grantAppend=".* to '"+init.baseDir+"wp"
 
 
 
@@ -53,9 +53,10 @@ for x in range(5):
 		exit(0)
 		
 	mysql_cmd=init.mysql_CMD
-	print mysql_cmd
+	
 	mysql_cmd=mysql_cmd+str(x)+mysql_user+str(x)+mysql_userAppend+str(x)+mysql_grant+str(x)+mysql_grantAppend+str(x)+"'@'localhost'\""
-	print mysql_cmd
+	mysqlcmd=mysql_cmd.split('"')
+	print mysqlcmd[1]
 	p=subprocess.Popen(mysql_cmd,stdout=subprocess.PIPE,shell=True)
 
 	
