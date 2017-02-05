@@ -9,8 +9,11 @@ import passwd
 wordpress="/var/www/ALykeiou/wordpress-4.7.1-el.tar.gz"
 baseDir="ALykeiou"
 installDir="/var/www/"+baseDir
-tarcmd="sudo tar -xvf "+wordpress
 
+sampleConfigFile="wp-config-sample.php"
+configFile="wp-config.php"
+
+tarcmd="sudo tar -xvf "+wordpress
 mysqlDict={'user':passwd.userName,'password':passwd.password,'host':passwd.hostName}
 mysqlcmd="mysql --user={user} --password={password} -Bse \"""CREATE DATABASE "+baseDir+ "wp"
 mysql_CMD=mysqlcmd.format(**mysqlDict)
