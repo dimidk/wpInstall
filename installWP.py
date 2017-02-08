@@ -35,39 +35,16 @@ else:
 	print "You are in wrong directory"
 	exit(0)
 	
-for x in range(2):
+for x in range(init.number_install):
 	
-	"""if (subprocess.call(init.tarcmd.split(' ')))==0:
-		print "Ok"
-	else:
-		print "error in tar command"
-		exit(0)
-		
-	if (subprocess.call(chown_cmd.split(' ')))==0:
-		print "Ok"
-	else:
-		print "error in chown command"
-		exit(0)
-	if (subprocess.call(chmod_cmd.split(' ')))==0:
-		print "Ok"
-	else:
-		print "error in chmod command"
-		exit(0)"""
-		
 	callCommand(init.tarcmd.split(' '))
 	callCommand(chown_cmd.split(' '))
 	callCommand(chmod_cmd.split(' '))
 	
 	mv_cmd=init.mv_CMD+str(x)
 	
-	"""if (subprocess.call(mv_cmd.split(' ')))==0:
-		print "Ok"
-	else:
-		print "error in mv command"
-		exit(0)"""
 	callCommand(mv_cmd.split(' '))
 		
-	
 	
 	mysql_cmd=init.mysql_CMD
 	
@@ -85,7 +62,7 @@ for x in range(2):
 	
 	mysql_cmd=""
 	
-for x in range(2):
+for x in range(init.number_install):
 	
 	curWPDir=init.installDir+"/wp"+str(x)
 	createWPConfig.wpConfig(curWPDir,homeDir,x)
@@ -94,12 +71,7 @@ for x in range(2):
 	cp_cmd="sudo cp "+init.configFile+" "+init.installDir+"/wp"+str(x)
 	mvfile_cmd="sudo cp " + init.installDir+"/wp" + str(x)+"/"+init.configFile +" "+init.installDir+"/wp" + str(x)+"/"+init.sampleConfigFile
 	callCommand(cp_cmd.split(' '))
-	"""if (subprocess.call(cp_cmd.split(' ')))==0:
-		print "Ok"
-	else:
-		print "error in renaming file"
-		exit(0)"""
-	
+
 	curDir=os.getcwd()
 	print curDir
 	
@@ -107,22 +79,12 @@ for x in range(2):
 	chmod_cmd=init.chmod_CMD+"/wp"+str(x)
 	
 	callCommand(chown_cmd.split(' '))
-	"""callCommand(chmod_cmd.split(' '))"""
+	callCommand(chmod_cmd.split(' '))
 	callCommand(mvfile_cmd.split(' '))
 	
-	cp_cmd="sudo cp "+init.installDir+"/wp"+str(x)+"/"+init.sampleConfigFile+" "+init.installDir+"/wp"+str(x)+"/"+init.configFile
 	
-	"""if (subprocess.call(chown_cmd.split(' ')))==0:
-		print "Ok"
-	else:
-		print "error in chown command"
-		exit(0)
-		
-	if (subprocess.call(chmod_cmd.split(' ')))==0:
-		print "Ok"
-	else:
-		print "error in chmod command"
-		exit(0)"""
+	
+	
 		
 	
 	

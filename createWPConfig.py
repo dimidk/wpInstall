@@ -47,19 +47,19 @@ def wpConfig(curWPDir,homeDir,x):
 		
 		if line.find(DBNAME)!=-1:
 			print "I am in dbname"
-			writeLine="define('"+DBNAME+"', '"+init.baseDir+"wp"+str(x)+"')"
+			writeLine="define('"+DBNAME+"', '"+init.baseDir+"wp"+str(x)+"');"
 			writeFileHandler.write(writeLine)
 			print writeLine
 			
 		elif line.find(DBUSER)!=-1:
 			print "I am in dbuser"
-			writeLine="define('"+DBUSER+"', '"+init.baseDir+"wp"+str(x)+"')"
+			writeLine="define('"+DBUSER+"', '"+init.baseDir+"wp"+str(x)+"');"
 			writeFileHandler.write(writeLine)
 			print writeLine
 			
 		elif line.find(DBPASSWD)!=-1:
 			print "I am in dbpasswd"
-			writeLine="define('"+DBPASSWD+"', '"+init.baseDir+"wp"+str(x)+"')"
+			writeLine="define('"+DBPASSWD+"', '"+init.baseDir+"wp"+str(x)+"');"
 			writeFileHandler.write(writeLine)
 			print writeLine
 		

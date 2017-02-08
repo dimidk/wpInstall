@@ -17,7 +17,7 @@ else:
 	print "You are in wrong directory"
 	exit(0)
 	
-for x in range(1):
+for x in range(init.number_install):
 	
 		
 	rm_cmd=init.rm_CMD+str(x)
