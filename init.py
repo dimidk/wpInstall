@@ -5,7 +5,7 @@
 
 import passwd
 
-
+number_install=20
 wordpress="/var/www/ALykeiou/wordpress-4.7.1-el.tar.gz"
 baseDir="ALykeiou"
 installDir="/var/www/"+baseDir
@@ -20,6 +20,7 @@ mysql_CMD=mysqlcmd.format(**mysqlDict)
 chown_CMD="sudo chown www-data:www-data -R "+installDir
 chmod_CMD="sudo chmod 755 -R " +installDir
 mv_CMD="sudo mv "+installDir+"/wordpress "+installDir+"/wp"
+cp_config="sudo cp " 
 
 dropcmd="mysql --user={user} --password={password} -Bse \"""DROP DATABASE "+baseDir+ "wp"
 drop_CMD=dropcmd.format(**mysqlDict)
