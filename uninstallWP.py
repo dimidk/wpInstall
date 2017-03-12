@@ -11,12 +11,14 @@ curDir=os.getcwd()
 os.chdir(init.installDir)
 curDir=os.getcwd()
 
+"""go to directory to uninstall"""
 if (curDir==init.installDir):
 	print "you are in the correct directory"
 else:
 	print "You are in wrong directory"
 	exit(0)
-	
+
+"""for number of installations unistall each wordpress directory and database"""	
 for x in range(init.number_install):
 	
 		
