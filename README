@@ -1,0 +1,7 @@
+This is a script for installing wordpress. 
+In init.py file you can declare the number of installations and the base installation 
+directory. The installWP.py creates the database and database's user for wordpress and the wordpress's
+files in the directory you defined in init.py file. 
+createWPConfig.py, writes to wp-config.php, so the starting point in using wordpress will be naming your site and declaring the 
+site's administrator's name
+If you want to uninstall wordpress the uninstallWP.py removes wordpress directory and its database.
