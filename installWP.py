@@ -29,14 +29,17 @@ curDir=os.getcwd()
 homeDir=curDir
 os.chdir(init.installDir)
 curDir=os.getcwd()
+
+""" go to installation directory"""
 if (curDir==init.installDir):
 	print "you are in the correct directory"
 else:
 	print "You are in wrong directory"
 	exit(0)
-	
+"""start multiple installations"""	
 for x in range(init.number_install):
 	
+	"""extract wordpress zip file"""
 	callCommand(init.tarcmd.split(' '))
 	callCommand(chown_cmd.split(' '))
 	callCommand(chmod_cmd.split(' '))
@@ -45,7 +48,7 @@ for x in range(init.number_install):
 	
 	callCommand(mv_cmd.split(' '))
 		
-	
+	"""connect to database and create database and database's user for wordpress"""
 	mysql_cmd=init.mysql_CMD
 	
 	mysql_cmd=mysql_cmd+str(x)+mysql_user+str(x)+mysql_userAppend+str(x)+mysql_grant+str(x)+mysql_grantAppend+str(x)+"'@'localhost'\""
@@ -61,7 +64,8 @@ for x in range(init.number_install):
 		exit(0)
 	
 	mysql_cmd=""
-	
+
+"""for each wordpress create wp-config.php file"""
 for x in range(init.number_install):
 	
 	curWPDir=init.installDir+"/wp"+str(x)
