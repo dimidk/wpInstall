@@ -1,4 +1,4 @@
-This is a script for installing wordpress. 
+This is a script for multiple installations of wordpress. 
 In init.py file you can declare the number of installations and the base installation 
 directory. In passwd.py you define username and password and localhost to connect to mysql DB.
 The installWP.py creates the database and database's user for wordpress and the wordpress's
